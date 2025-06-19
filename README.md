@@ -38,6 +38,20 @@ A simple script to compute the **Pearson correlation coefficient** between two m
 
 ---
 
+### 4. `effect-size.py`
+This script calculates **Cohen’s _d_** to quantify the effect size between two groups (e.g., high vs. low experience).
+
+**Main features:**
+- Accepts two numerical lists or arrays.
+- Computes the pooled standard deviation and Cohen’s _d_.
+- Interprets the effect size (small, medium, or large).
+
+**Usage:**
+- Replace the sample `group1` and `group2` variables with your actual data.
+- Run the script to print both the raw effect size and its interpretation.
+
+---
+
 ## 🔍 How SonarQube Was Used to Compute Maintainability Metrics
 
 1. **Setup SonarQube Locally**
@@ -70,7 +84,8 @@ For each student's isolated repository, the following maintainability metrics we
   `Code Smells / (LOC / 1000)`
 
 - **Comment Density (%)**  
-  Directly retrieved from the `comment_lines_density` metric in SonarQube.
+   Retrieved from SonarQube’s API (`commented_lines` and `ncloc` metrics), then calculated as:  
+  `Commented Lines / (LOC / 1000)`
 
 - **Code Duplication (%)**  
   Retrieved from the `duplicated_lines_density` metric in SonarQube.
